@@ -1,0 +1,34 @@
+### Create a ticket
+POST http://localhost:3000/api/tickets
+Content-Type: application/json
+
+{
+  "title": "Mon premier ticket",
+  "description": "Créé depuis Zed"
+}
+
+### List all tickets
+GET http://localhost:3000/api/tickets
+
+### Get ticket by id
+GET http://localhost:3000/api/tickets/1
+
+### Create ticket without description
+POST http://localhost:3000/api/tickets
+Content-Type: application/json
+
+{
+  "title": "Ticket sans description"
+}
+
+### Validation error: empty title
+POST http://localhost:3000/api/tickets
+Content-Type: application/json
+
+{
+  "title": "",
+  "description": "Doit échouer avec 400"
+}
+
+### Not found: ticket inexistant
+GET http://localhost:3000/api/tickets/9999
